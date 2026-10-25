@@ -1134,6 +1134,288 @@ a {
   }
 }
 
+/* ==========================================
+   PROMPTLY — INDIGO + WHITE LIGHT THEME
+   Complete CSS Override
+   Preserves existing layout and responsiveness
+========================================== */
+
+:root {
+  --page-bg: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-soft: #F5F3FF;
+
+  --primary: #4F46E5;
+  --primary-dark: #3730A3;
+  --primary-light: #E0E7FF;
+  --primary-faint: #EEF2FF;
+
+  --text-main: #1E1B4B;
+  --text-muted: #64748B;
+
+  --border: #E2E8F0;
+  --border-strong: #C7D2FE;
+
+  --shadow: 0 8px 24px rgba(79, 70, 229, 0.06);
+  --shadow-hover: 0 16px 36px rgba(79, 70, 229, 0.14);
+}
+
+/* Base */
+.browse-page {
+  background:
+    radial-gradient(
+      circle at 7% 7%,
+      rgba(79, 70, 229, 0.045),
+      transparent 27%
+    ),
+    var(--page-bg);
+  color: var(--text-main);
+}
+
+/* Navbar */
+.browse-page .browse-navbar {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.browse-page .brand {
+  color: var(--text-main);
+}
+
+.browse-page .brand-icon {
+  background: linear-gradient(145deg, #6366F1, #4338CA);
+  color: #FFFFFF;
+  box-shadow: 0 7px 18px rgba(79, 70, 229, 0.20);
+}
+
+/* Hero */
+.browse-page .chapter-hero {
+  background:
+    radial-gradient(
+      circle at 87% 15%,
+      rgba(129, 140, 248, 0.15),
+      transparent 29%
+    ),
+    linear-gradient(
+      115deg,
+      #FFFFFF 0%,
+      #FAFAFF 55%,
+      #EEF2FF 100%
+    );
+  border-bottom-color: var(--border);
+}
+
+.browse-page .hero-content h1,
+.browse-page .hero-content h2 {
+  color: var(--text-main);
+}
+
+.browse-page .hero-content h1 span,
+.browse-page .hero-content h2 span {
+  color: var(--primary);
+}
+
+.browse-page .hero-content p {
+  color: var(--text-muted);
+}
+
+.browse-page .hero-badge,
+.browse-page .hero-content .hero-badge {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #C7D2FE;
+  color: var(--primary);
+}
+
+.browse-page .hero-badge::before,
+.browse-page .hero-content .hero-badge::before {
+  color: #6366F1;
+}
+
+/* Hero decorations */
+.browse-page .hero-decoration.shape-one {
+  border-color: rgba(79, 70, 229, 0.14);
+  box-shadow:
+    0 0 0 35px rgba(79, 70, 229, 0.025),
+    0 0 0 70px rgba(79, 70, 229, 0.018);
+}
+
+.browse-page .hero-decoration.shape-two {
+  background: rgba(129, 140, 248, 0.12);
+}
+
+/* Search bar */
+.browse-page .search-box {
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: 0 3px 12px rgba(79, 70, 229, 0.035);
+}
+
+.browse-page .search-box:focus-within {
+  border-color: #818CF8;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.10);
+}
+
+.browse-page .search-box svg {
+  color: var(--primary);
+}
+
+.browse-page .search-box input {
+  color: var(--text-main);
+}
+
+.browse-page .search-box input::placeholder {
+  color: #94A3B8;
+}
+
+/* Category filters */
+.browse-page .category-list button,
+.browse-page .category-list a {
+  background: #FFFFFF;
+  border-color: var(--border);
+  color: #475569;
+}
+
+.browse-page .category-list button:hover,
+.browse-page .category-list a:hover {
+  background: var(--primary-faint);
+  border-color: #C7D2FE;
+  color: var(--primary);
+}
+
+.browse-page .category-list button.active,
+.browse-page .category-list a.active,
+.browse-page .category-list button[aria-pressed="true"] {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+  box-shadow: 0 5px 14px rgba(79, 70, 229, 0.20);
+}
+
+/* Section headings */
+.browse-page .section-heading h2 {
+  color: var(--text-main);
+}
+
+.browse-page .section-heading p {
+  color: var(--text-muted);
+}
+
+.browse-page .section-heading .chapter-count {
+  color: var(--primary);
+}
+
+/* Chapter cards */
+.browse-page .chapter-card {
+  background: var(--surface);
+  border-color: #E2E8F0;
+  box-shadow: var(--shadow);
+}
+
+.browse-page .chapter-card::before {
+  background: linear-gradient(90deg, #4F46E5, #A5B4FC);
+}
+
+.browse-page .chapter-card:hover {
+  border-color: #C7D2FE;
+  box-shadow: var(--shadow-hover);
+}
+
+.browse-page .chapter-card h3 {
+  color: var(--text-main);
+}
+
+.browse-page .chapter-card p {
+  color: var(--text-muted);
+}
+
+/* Chapter icons */
+.browse-page .chapter-card .chapter-icon {
+  background: linear-gradient(145deg, #F5F3FF, #E0E7FF);
+  border-color: #E0E7FF;
+  color: var(--primary);
+}
+
+.browse-page .chapter-card .chapter-number {
+  color: #A5B4FC;
+}
+
+/* Chapter metadata */
+.browse-page .chapter-card .chapter-meta span {
+  background: #F8FAFC;
+  border-color: #E2E8F0;
+  color: #64748B;
+}
+
+/* Start buttons */
+.browse-page .start-btn {
+  background: linear-gradient(135deg, #6366F1, #4338CA);
+  border-color: #4F46E5;
+  color: #FFFFFF;
+  box-shadow: 0 5px 12px rgba(79, 70, 229, 0.17);
+}
+
+.browse-page .start-btn:hover {
+  background: linear-gradient(135deg, #4F46E5, #3730A3);
+  box-shadow: 0 9px 20px rgba(79, 70, 229, 0.25);
+}
+
+.browse-page .start-btn:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.28);
+  outline-offset: 3px;
+}
+
+/* Empty search state */
+.browse-page .empty-state {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: #C7D2FE;
+}
+
+.browse-page .empty-state .empty-icon {
+  background: #E0E7FF;
+  color: var(--primary);
+}
+
+.browse-page .empty-state h3 {
+  color: var(--text-main);
+}
+
+.browse-page .empty-state p {
+  color: var(--text-muted);
+}
+
+/* Footer */
+.browse-page .browse-footer {
+  background: #FFFFFF;
+  border-top-color: var(--border);
+  color: var(--text-muted);
+}
+
+.browse-page .browse-footer strong {
+  color: var(--primary);
+}
+
+/* Navbar links and keyboard accessibility */
+.browse-page .browse-navbar nav a {
+  color: var(--text-main);
+  transition: color 0.2s ease;
+}
+
+.browse-page .browse-navbar nav a:hover {
+  color: var(--primary);
+}
+
+.browse-page a:focus-visible,
+.browse-page button:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.30);
+  outline-offset: 3px;
+}
+
+/* Keep original responsive breakpoints,
+   grid layout, dimensions and animations unchanged */
+
+
 
 
 
