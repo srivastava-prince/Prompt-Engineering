@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -8,12 +9,11 @@ export default function LoginPage() {
   return (
     <>
       <main className="page">
+        <div className="grid" />
+        <div className="shape shape1" />
+        <div className="shape shape2" />
+        <div className="shape shape3" />
 
-        <div className="grid"></div>
-        <div className="shape shape1"></div>
-        <div className="shape shape2"></div>
-
-        {/* TOP */}
         <header className="topbar">
           <a href="/" className="brand">
             <span className="brandIcon">✦</span>
@@ -22,64 +22,55 @@ export default function LoginPage() {
 
           <div className="topText">
             New here?
-            <a href="/signup"> Create account</a>
+            <a href="/Signup"> Create account</a>
           </div>
         </header>
 
-        {/* MAIN */}
         <section className="login-layout">
-
-          {/* LEFT */}
           <div className="intro">
-
             <div className="number">
               <span>01</span>
-              <i></i>
+              <i />
               <span>AUTHENTICATION</span>
             </div>
 
             <h1>
               Welcome back.
               <br />
-              <em>Let's build.</em>
+              <em>Let&apos;s build.</em>
             </h1>
 
             <p>
-              Your prompts, ideas and experiments are
-              waiting for you.
+              Your prompts, ideas and experiments are waiting for you.
+              Pick up where your creativity left off.
             </p>
 
             <div className="prompt-line">
-              <span className="line-dot"></span>
+              <span className="line-dot" />
               <span>
                 /workspace <b>→</b> /prompt-library
               </span>
             </div>
 
-            {/* Prompt editor */}
             <div className="code-art">
-
               <div className="code-header">
                 <div className="dots">
-                  <i></i>
-                  <i></i>
-                  <i></i>
+                  <i />
+                  <i />
+                  <i />
                 </div>
-
                 <span>prompt.md</span>
-                <small>saved</small>
+                <small>● saved</small>
               </div>
 
               <div className="code-body">
                 <span className="line-no">01</span>
-                <span className="code-coral">Create</span>{" "}
+                <span className="code-blue">Create</span>{" "}
                 a compelling prompt
                 <br />
-
                 <span className="line-no">02</span>
                 for an AI writing assistant.
                 <br />
-
                 <span className="line-no">03</span>
                 <span className="code-dark">Focus</span>{" "}
                 on clarity &amp; context.
@@ -87,112 +78,114 @@ export default function LoginPage() {
 
               <div className="code-footer">
                 <span>✦ Promptly Engine</span>
-                <span>Ready</span>
+                <span>Ready to create</span>
               </div>
+            </div>
 
+            <div className="intro-bottom">
+              <span className="mini-star">✦</span>
+              <span>Think clearly. Prompt better. Build more.</span>
             </div>
           </div>
 
-          {/* RIGHT */}
           <div className="login-area">
-
             <div className="login-card">
-
               <div className="card-top">
                 <div className="card-icon">✦</div>
-
                 <div>
                   <span>YOUR WORKSPACE</span>
-                  <strong>Sign in</strong>
+                  <strong>Promptly Account</strong>
+                </div>
+                <div className="online">
+                  <i />
+                  SECURE
                 </div>
               </div>
 
               <div className="heading">
+                <span className="eyebrow">WELCOME BACK</span>
                 <h2>Good to see you.</h2>
-                <p>
-                  Enter your details to continue to Promptly.
-                </p>
+                <p>Enter your details to continue to Promptly.</p>
               </div>
 
-              {/* Google */}
-              <button className="google">
+              <button className="google" type="button">
                 <span className="googleG">G</span>
                 Continue with Google
               </button>
 
               <div className="or">
-                <span></span>
-                <small>OR</small>
-                <span></span>
+                <span />
+                <small>OR CONTINUE WITH EMAIL</small>
+                <span />
               </div>
 
-              {/* Email */}
-              <div className="field">
-                <label>Email address</label>
-
-                <div className="inputBox">
-                  <span className="inputSymbol">@</span>
-
-                  <input
-                    type="email"
-                    placeholder="you@example.com"
-                  />
-                </div>
-              </div>
-
-              {/* Password */}
-              <div className="field">
-                <div className="passwordHead">
-                  <label>Password</label>
-
-                  <button type="button">
-                    Forgot password?
-                  </button>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                <div className="field">
+                  <label htmlFor="email">Email address</label>
+                  <div className="inputBox">
+                    <span className="inputSymbol">@</span>
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="you@example.com"
+                      autoComplete="email"
+                      required
+                    />
+                  </div>
                 </div>
 
-                <div className="inputBox">
-                  <span className="inputSymbol">••</span>
+                <div className="field">
+                  <div className="passwordHead">
+                    <label htmlFor="password">Password</label>
+                    <button type="button">
+                      Forgot password?
+                    </button>
+                  </div>
 
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Enter your password"
-                  />
-
-                  <button
-                    className="show"
-                    type="button"
-                    onClick={() =>
-                      setShowPassword(!showPassword)
-                    }
-                  >
-                    {showPassword ? "Hide" : "Show"}
-                  </button>
+                  <div className="inputBox">
+                    <span className="inputSymbol">⌑</span>
+                    <input
+                      id="password"
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Enter your password"
+                      autoComplete="current-password"
+                      required
+                    />
+                    <button
+                      className="show"
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? "Hide" : "Show"}
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              {/* Remember */}
-              <label className="remember">
-                <input type="checkbox" />
-                <span className="fakeCheck"></span>
-                Keep me signed in
-              </label>
+                <label className="remember">
+                  <input type="checkbox" />
+                  <span className="fakeCheck" />
+                  Keep me signed in
+                </label>
 
-              {/* Login */}
-              <button className="loginBtn">
-                <span>Continue to workspace</span>
-                <b>↗</b>
-              </button>
+                <button className="loginBtn" type="submit">
+                  <span>Continue to workspace</span>
+                  <b>↗</b>
+                </button>
+              </form>
 
               <div className="signup">
-                Don't have an account?
-                <a href="/signup"> Create one</a>
+                Don&apos;t have an account?
+                <a href="/Signup"> Create one</a>
               </div>
 
               <div className="secure">
                 <span>✦</span>
                 Your workspace is protected
               </div>
-
             </div>
 
             <div className="side-label">
@@ -200,121 +193,99 @@ export default function LoginPage() {
               <span>REFINE</span>
               <span>TEST</span>
             </div>
-
           </div>
         </section>
 
         <footer>
           <span>© 2026 Promptly</span>
-
           <div>
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
           </div>
         </footer>
-
       </main>
 
       <style jsx>{`
-
         * {
           box-sizing: border-box;
         }
 
-        /* =========================
-           PAGE
-        ========================= */
-
         .page {
+          --mist: #f1f2f6;
+          --indigo: #3949ab;
+          --indigo-dark: #293783;
+          --ink: #22263c;
+          --muted: #777d91;
+          --line: #e0e3ed;
+
           min-height: 100vh;
           position: relative;
           overflow: hidden;
-
+          padding: 28px 5vw;
           background:
             radial-gradient(
-              circle at 8% 20%,
-              rgba(239, 183, 164, .30),
-              transparent 28%
+              circle at 7% 18%,
+              rgba(57, 73, 171, 0.09),
+              transparent 27%
             ),
             radial-gradient(
-              circle at 90% 80%,
-              rgba(224, 201, 182, .32),
-              transparent 30%
+              circle at 94% 83%,
+              rgba(106, 117, 177, 0.10),
+              transparent 29%
             ),
-            #f7f2eb;
-
-          color: #292522;
-
-          font-family:
-            Inter,
-            "Segoe UI",
-            Arial,
-            sans-serif;
-
-          padding: 28px 5vw;
+            var(--mist);
+          color: var(--ink);
+          font-family: Arial, "Segoe UI", sans-serif;
         }
-
-        /* =========================
-           BACKGROUND
-        ========================= */
 
         .grid {
           position: absolute;
           inset: 0;
-
-          opacity: .28;
-
+          opacity: 0.28;
+          pointer-events: none;
           background-image:
-            linear-gradient(
-              rgba(90, 72, 60, .045) 1px,
-              transparent 1px
-            ),
-            linear-gradient(
-              90deg,
-              rgba(90, 72, 60, .045) 1px,
-              transparent 1px
-            );
-
-          background-size: 55px 55px;
+            linear-gradient(rgba(57, 73, 171, 0.045) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(57, 73, 171, 0.045) 1px, transparent 1px);
+          background-size: 54px 54px;
         }
 
         .shape {
           position: absolute;
           border-radius: 50%;
           pointer-events: none;
+          filter: blur(35px);
         }
 
         .shape1 {
           width: 330px;
           height: 330px;
-          left: -180px;
-          top: 35%;
-
-          background: #f1d5c9;
-          filter: blur(15px);
+          left: -190px;
+          top: 32%;
+          background: #dfe2f1;
         }
 
         .shape2 {
           width: 350px;
           height: 350px;
-          right: -190px;
-          top: 3%;
-
-          background: #eadfd2;
-          filter: blur(18px);
+          right: -210px;
+          top: -70px;
+          background: #e0e3ef;
         }
 
-        /* =========================
-           TOP
-        ========================= */
+        .shape3 {
+          width: 210px;
+          height: 210px;
+          right: 32%;
+          bottom: -150px;
+          background: #d4d9f0;
+          opacity: 0.65;
+        }
 
         .topbar {
           position: relative;
           z-index: 5;
-
           max-width: 1280px;
           margin: auto;
-
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -323,188 +294,149 @@ export default function LoginPage() {
         .brand {
           display: flex;
           align-items: center;
-          gap: 10px;
-
-          color: #292522;
+          gap: 11px;
+          color: var(--ink);
           text-decoration: none;
-
-          font-size: 20px;
-          font-weight: 700;
-          letter-spacing: -.5px;
+          font-size: 23px;
+          font-weight: 800;
+          letter-spacing: -0.8px;
         }
 
         .brandIcon {
-          width: 35px;
-          height: 35px;
-
+          width: 40px;
+          height: 40px;
           display: grid;
           place-items: center;
-
-          border-radius: 10px;
-
-          background: #c96d55;
+          border-radius: 13px;
+          background: var(--indigo);
           color: white;
-
-          box-shadow:
-            0 8px 20px rgba(180, 91, 70, .22);
+          font-size: 19px;
+          box-shadow: 0 8px 20px rgba(57, 73, 171, 0.22);
         }
 
         .topText {
-          color: #92877f;
-          font-size: 11px;
+          color: var(--muted);
+          font-size: 13px;
         }
 
-        .topText a {
-          color: #bd5f49;
-          font-weight: 700;
+        .topText a,
+        .signup a {
+          color: var(--indigo);
+          font-weight: 750;
           text-decoration: none;
         }
 
-        /* =========================
-           LAYOUT
-        ========================= */
+        .topText a:hover,
+        .signup a:hover {
+          color: var(--indigo-dark);
+          text-decoration: underline;
+        }
 
         .login-layout {
           position: relative;
           z-index: 2;
-
           max-width: 1120px;
           min-height: calc(100vh - 130px);
-
           margin: auto;
-
           display: grid;
-          grid-template-columns: 1fr 470px;
-
+          grid-template-columns: minmax(0, 1fr) 470px;
           align-items: center;
-          gap: 80px;
+          gap: 70px;
+          padding: 30px 0 55px;
         }
-
-        /* =========================
-           LEFT
-        ========================= */
 
         .number {
           display: flex;
           align-items: center;
-          gap: 10px;
-
-          margin-bottom: 25px;
-
-          color: #9a8e85;
-
-          font-size: 9px;
-          font-weight: 700;
-          letter-spacing: 1.8px;
+          gap: 12px;
+          margin-bottom: 27px;
+          color: #858ba0;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 2px;
         }
 
         .number span:first-child {
-          color: #c96d55;
+          color: var(--indigo);
         }
 
         .number i {
-          width: 35px;
+          width: 36px;
           height: 1px;
-          background: #d7c7bb;
+          background: #c8cce0;
         }
 
-        .intro h1 {
-          margin: 0;
+        
+.intro h1 {
+  margin: 0;
+  font-size: clamp(42px, 4.5vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+  font-weight: 600;
+  color: var(--ink);
+}
 
-          font-size: clamp(50px, 6vw, 78px);
-          line-height: .98;
+.intro h1 em {
+  color: var(--indigo);
+  font-style: normal;
+}
 
-          letter-spacing: -4.5px;
-          font-weight: 600;
-
-          color: #292522;
-        }
-
-        .intro h1 em {
-          color: #c96d55;
-          font-style: normal;
-        }
 
         .intro > p {
-          max-width: 440px;
-
-          margin: 28px 0 25px;
-
-          color: #83786f;
-
-          font-size: 14px;
-          line-height: 1.75;
+          max-width: 430px;
+          margin: 25px 0;
+          color: #73798e;
+          font-size: 15px;
+          line-height: 1.85;
         }
 
         .prompt-line {
           display: flex;
           align-items: center;
-          gap: 9px;
-
-          margin-bottom: 28px;
-
-          color: #91867e;
-
+          gap: 12px;
+          margin-bottom: 27px;
+          color: #7f8499;
           font-family: monospace;
-          font-size: 10px;
+          font-size: 12px;
         }
 
         .line-dot {
-          width: 7px;
-          height: 7px;
-
+          width: 8px;
+          height: 8px;
           border-radius: 50%;
-
-          background: #c96d55;
-
-          box-shadow:
-            0 0 0 5px rgba(201, 109, 85, .11);
+          background: var(--indigo);
+          box-shadow: 0 0 0 5px rgba(57, 73, 171, 0.10);
         }
 
         .prompt-line b {
-          color: #c96d55;
-          margin: 0 4px;
+          color: var(--indigo);
+          margin: 0 5px;
         }
-
-        /* =========================
-           PROMPT EDITOR
-        ========================= */
 
         .code-art {
           width: min(455px, 100%);
-
-          border: 1px solid #e5d9ce;
-          border-radius: 17px;
-
-          background: rgba(255, 252, 248, .78);
-
-          box-shadow:
-            0 22px 45px rgba(80, 61, 46, .09);
-
           overflow: hidden;
-
+          border: 1px solid #dfe2ed;
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.88);
+          box-shadow: 0 22px 55px rgba(40, 46, 89, 0.08);
           transform: rotate(-1deg);
-
-          transition: .3s ease;
+          transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .code-art:hover {
-          transform: rotate(0deg) translateY(-3px);
+          transform: rotate(0) translateY(-4px);
+          box-shadow: 0 28px 60px rgba(40, 46, 89, 0.12);
         }
 
         .code-header {
-          height: 42px;
-
+          height: 46px;
           display: flex;
           align-items: center;
-
-          padding: 0 15px;
-
-          border-bottom: 1px solid #eee4db;
-
-          color: #968a80;
-
-          font-size: 9px;
+          padding: 0 17px;
+          border-bottom: 1px solid #eaebf2;
+          color: #858ba0;
+          font-size: 11px;
         }
 
         .dots {
@@ -514,507 +446,463 @@ export default function LoginPage() {
         }
 
         .dots i {
-          width: 6px;
-          height: 6px;
+          width: 7px;
+          height: 7px;
           border-radius: 50%;
-          background: #d8cbc1;
+          background: #c8ccdc;
+        }
+
+        .dots i:first-child {
+          background: #8b91ba;
         }
 
         .code-header small {
           margin-left: auto;
-          color: #72a083;
-          font-size: 8px;
+          color: var(--indigo);
+          font-size: 10px;
         }
 
         .code-body {
-          padding: 22px 20px;
-
-          color: #756a62;
-
+          padding: 23px 21px;
+          color: #555b70;
           font-family: monospace;
-
-          font-size: 11px;
-          line-height: 2;
+          font-size: 12px;
+          line-height: 2.2;
         }
 
         .line-no {
           display: inline-block;
-          width: 28px;
-          color: #c5b9b0;
+          width: 32px;
+          color: #a9aec0;
         }
 
-        .code-coral {
-          color: #c45f49;
+        .code-blue {
+          color: var(--indigo);
+          font-weight: 700;
         }
 
         .code-dark {
-          color: #66544a;
+          color: #454b70;
+          font-weight: 700;
         }
 
         .code-footer {
           display: flex;
           justify-content: space-between;
-
-          padding: 11px 15px;
-
-          border-top: 1px solid #eee4db;
-
-          color: #a0958c;
-          font-size: 8px;
+          padding: 13px 17px;
+          border-top: 1px solid #eaebf2;
+          color: #858ba0;
+          font-size: 10px;
         }
 
         .code-footer span:last-child {
-          color: #72a083;
+          color: var(--indigo);
+          font-weight: 700;
         }
 
-        /* =========================
-           LOGIN CARD
-        ========================= */
+        .intro-bottom {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-top: 27px;
+          color: #81869a;
+          font-size: 11px;
+          letter-spacing: 0.2px;
+        }
+
+        .mini-star {
+          color: var(--indigo);
+        }
 
         .login-area {
           position: relative;
         }
 
         .login-card {
-          padding: 38px 40px 32px;
-
-          background: rgba(255, 253, 250, .94);
-
-          border: 1px solid #e5d9cf;
-
-          border-radius: 23px;
-
+          padding: 36px 38px 30px;
+          border: 1px solid rgba(222, 225, 237, 0.95);
+          border-radius: 24px;
+          background: rgba(255, 255, 255, 0.94);
           box-shadow:
-            0 28px 70px rgba(69, 52, 40, .12),
-            0 5px 15px rgba(69, 52, 40, .04);
+            0 28px 75px rgba(42, 47, 91, 0.09),
+            0 4px 15px rgba(42, 47, 91, 0.035);
+          backdrop-filter: blur(18px);
+          animation: cardIn 0.6s ease both;
+        }
+
+        @keyframes cardIn {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         .card-top {
           display: flex;
           align-items: center;
-          gap: 11px;
-
-          margin-bottom: 28px;
+          gap: 12px;
+          margin-bottom: 29px;
         }
 
         .card-icon {
-          width: 39px;
-          height: 39px;
-
+          width: 43px;
+          height: 43px;
           display: grid;
           place-items: center;
-
-          border-radius: 11px;
-
-          background: #f5dfd7;
-
-          color: #c96d55;
-
-          font-size: 15px;
+          border-radius: 13px;
+          background: #eef0fb;
+          color: var(--indigo);
+          font-size: 18px;
+          box-shadow: inset 0 0 0 1px #e0e3f4;
         }
 
-        .card-top div:last-child {
+        .card-top > div:nth-child(2) {
           display: flex;
           flex-direction: column;
-          gap: 3px;
+          gap: 5px;
         }
 
         .card-top span {
-          color: #aa9e95;
-
-          font-size: 7px;
-          letter-spacing: 1.4px;
+          color: #858ba0;
+          font-size: 9px;
+          letter-spacing: 1.5px;
           font-weight: 800;
         }
 
         .card-top strong {
-          color: #413a36;
-
-          font-size: 12px;
-          font-weight: 700;
+          color: var(--ink);
+          font-size: 13px;
+          font-weight: 750;
         }
 
-        /* =========================
-           HEADING
-        ========================= */
+        .online {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          margin-left: auto;
+          color: #747b91;
+          font-size: 8px;
+          font-weight: 800;
+          letter-spacing: 1px;
+        }
+
+        .online i {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #6877bd;
+        }
 
         .heading {
-          margin-bottom: 25px;
+          margin-bottom: 24px;
+        }
+
+        .eyebrow {
+          display: block;
+          margin-bottom: 9px;
+          color: var(--indigo);
+          font-size: 9px;
+          font-weight: 800;
+          letter-spacing: 1.7px;
         }
 
         .heading h2 {
           margin: 0;
-
-          color: #2c2825;
-
-          font-size: 29px;
+          color: var(--ink);
+          font-size: 30px;
+          line-height: 1.2;
           letter-spacing: -1.2px;
-
-          font-weight: 600;
+          font-weight: 800;
         }
 
         .heading p {
-          margin: 9px 0 0;
-
-          color: #998e86;
-
-          font-size: 11px;
+          margin: 10px 0 0;
+          color: #7b8094;
+          font-size: 12px;
+          line-height: 1.6;
         }
-
-        /* =========================
-           GOOGLE
-        ========================= */
 
         .google {
           width: 100%;
-          height: 45px;
-
-          border: 1px solid #e3d9d1;
-          border-radius: 10px;
-
-          background: #fffdfa;
-
-          color: #554c46;
-
+          height: 47px;
+          border: 1px solid #dfe2ec;
+          border-radius: 11px;
+          background: white;
+          color: #41465b;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 9px;
-
-          font-size: 11px;
-          font-weight: 650;
-
+          gap: 10px;
+          font-size: 12px;
+          font-weight: 700;
           cursor: pointer;
-
-          transition: .2s;
+          transition: 0.2s ease;
         }
 
         .google:hover {
-          background: #fff;
-          border-color: #d3c5bb;
+          background: #f8f8fc;
+          border-color: #bfc5e2;
+          transform: translateY(-1px);
         }
 
         .googleG {
           color: #4285f4;
-          font-size: 16px;
+          font-size: 17px;
           font-weight: 800;
         }
-
-        /* =========================
-           DIVIDER
-        ========================= */
 
         .or {
           display: flex;
           align-items: center;
-          gap: 10px;
-
-          margin: 21px 0;
+          gap: 12px;
+          margin: 22px 0;
         }
 
         .or span {
           flex: 1;
           height: 1px;
-          background: #eee7e1;
+          background: #e8e9f0;
         }
 
         .or small {
-          color: #b0a59d;
+          color: #9297a9;
           font-size: 8px;
+          letter-spacing: 1px;
+          white-space: nowrap;
         }
 
-        /* =========================
-           INPUTS
-        ========================= */
-
         .field {
-          margin-bottom: 16px;
+          margin-bottom: 18px;
         }
 
         .field label {
           display: block;
-
-          margin-bottom: 7px;
-
-          color: #665d56;
-
-          font-size: 10px;
-          font-weight: 650;
+          margin-bottom: 8px;
+          color: #454a60;
+          font-size: 12px;
+          font-weight: 700;
         }
 
         .inputBox {
-          height: 46px;
-
+          height: 48px;
           display: flex;
           align-items: center;
-
-          border: 1px solid #dfd6cf;
-
-          border-radius: 10px;
-
-          background: #fffdfa;
-
-          transition: .2s;
+          border: 1px solid #dfe2ec;
+          border-radius: 11px;
+          background: #fafafe;
+          transition: 0.2s;
         }
 
         .inputBox:focus-within {
-          border-color: #cf7862;
-
-          box-shadow:
-            0 0 0 4px rgba(201, 109, 85, .09);
+          border-color: var(--indigo);
+          background: white;
+          box-shadow: 0 0 0 4px rgba(57, 73, 171, 0.09);
         }
 
         .inputSymbol {
-          width: 42px;
-
+          width: 43px;
           text-align: center;
-
-          color: #aa9c93;
-
-          font-size: 12px;
+          color: #858ba5;
+          font-size: 14px;
         }
 
         .inputBox input {
           flex: 1;
-
+          width: 0;
           height: 100%;
-
           border: 0;
           outline: 0;
-
           background: transparent;
-
-          color: #302a26;
-
-          font-size: 11px;
+          color: var(--ink);
+          font-size: 12px;
         }
 
         .inputBox input::placeholder {
-          color: #b7aea7;
+          color: #a3a7b8;
         }
 
         .passwordHead {
           display: flex;
           justify-content: space-between;
+          align-items: center;
         }
 
         .passwordHead button {
           border: 0;
           background: transparent;
-
-          color: #bd644d;
-
-          font-size: 9px;
-          font-weight: 650;
-
+          color: var(--indigo);
+          font-size: 10px;
+          font-weight: 700;
           cursor: pointer;
         }
 
         .show {
           border: 0;
           background: transparent;
-
-          color: #877b73;
-
+          color: var(--indigo);
           padding: 0 13px;
-
-          font-size: 9px;
-
+          font-size: 10px;
+          font-weight: 700;
           cursor: pointer;
         }
-
-        /* =========================
-           REMEMBER
-        ========================= */
 
         .remember {
           display: flex;
           align-items: center;
-          gap: 8px;
-
-          margin: 3px 0 20px;
-
-          color: #92877f;
-
-          font-size: 9px;
-
+          gap: 9px;
+          margin: 3px 0 21px;
+          color: #6f758a;
+          font-size: 11px;
           cursor: pointer;
         }
 
         .remember input {
-          display: none;
+          position: absolute;
+          opacity: 0;
+          width: 1px;
+          height: 1px;
         }
 
         .fakeCheck {
-          width: 14px;
-          height: 14px;
-
-          border: 1px solid #d6cbc2;
-
-          border-radius: 4px;
-
-          background: #fff;
+          width: 16px;
+          height: 16px;
+          flex-shrink: 0;
+          border: 1px solid #cdd1e0;
+          border-radius: 5px;
+          background: white;
+          transition: 0.2s;
         }
 
         .remember input:checked + .fakeCheck {
-          background: #c96d55;
-          border-color: #c96d55;
+          background: var(--indigo);
+          border-color: var(--indigo);
+          box-shadow: inset 0 0 0 3px white;
         }
-
-        /* =========================
-           BUTTON
-        ========================= */
 
         .loginBtn {
           width: 100%;
-          height: 48px;
-
+          min-height: 50px;
           border: 0;
-          border-radius: 10px;
-
+          border-radius: 11px;
           display: flex;
           align-items: center;
           justify-content: center;
-
           gap: 12px;
-
-          background: #c96d55;
-
+          background: var(--indigo);
           color: white;
-
-          font-size: 10px;
-          font-weight: 700;
-
+          font-size: 12px;
+          font-weight: 750;
           cursor: pointer;
-
-          box-shadow:
-            0 12px 25px rgba(184, 91, 68, .22);
-
-          transition: .25s;
+          box-shadow: 0 10px 23px rgba(57, 73, 171, 0.20);
+          transition: 0.25s ease;
         }
 
         .loginBtn:hover {
-          background: #b95f49;
+          background: var(--indigo-dark);
           transform: translateY(-2px);
-
-          box-shadow:
-            0 16px 30px rgba(184, 91, 68, .28);
+          box-shadow: 0 14px 28px rgba(57, 73, 171, 0.25);
         }
 
         .loginBtn b {
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 400;
-
-          transition: .25s;
+          transition: 0.2s;
         }
 
         .loginBtn:hover b {
           transform: translate(3px, -3px);
         }
 
-        /* =========================
-           FOOT
-        ========================= */
-
         .signup {
+          margin-top: 21px;
           text-align: center;
-
-          margin-top: 19px;
-
-          color: #9c9189;
-
-          font-size: 9px;
-        }
-
-        .signup a {
-          color: #bd634d;
-
-          text-decoration: none;
-          font-weight: 700;
+          color: #858a9d;
+          font-size: 11px;
         }
 
         .secure {
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 5px;
-
-          margin-top: 24px;
-
-          color: #b0a59d;
-
-          font-size: 8px;
+          gap: 7px;
+          margin-top: 25px;
+          padding-top: 18px;
+          border-top: 1px solid #ececf3;
+          color: #9297a8;
+          font-size: 10px;
         }
 
         .secure span {
-          color: #6f9d81;
+          color: var(--indigo);
         }
-
-        /* =========================
-           SIDE LABEL
-        ========================= */
 
         .side-label {
           position: absolute;
-
-          right: -75px;
-          top: 45%;
-
+          right: -65px;
+          top: 43%;
           display: flex;
-          gap: 12px;
-
-          color: #a99e96;
-
-          font-size: 7px;
+          gap: 13px;
+          color: #969bb0;
+          font-size: 8px;
           letter-spacing: 1.5px;
-
           transform: rotate(90deg);
         }
 
         .side-label span:nth-child(2) {
-          color: #c96d55;
+          color: var(--indigo);
+          font-weight: 800;
         }
-
-        /* =========================
-           FOOTER
-        ========================= */
 
         footer {
           position: absolute;
-
-          bottom: 25px;
+          bottom: 24px;
           left: 5vw;
           right: 5vw;
-
           display: flex;
           justify-content: space-between;
-
-          color: #aaa097;
-
-          font-size: 8px;
+          color: #969bad;
+          font-size: 10px;
         }
 
         footer div {
           display: flex;
-          gap: 20px;
+          gap: 22px;
         }
 
         footer a {
-          color: #978c84;
+          color: #777d92;
           text-decoration: none;
         }
 
-        /* =========================
-           TABLET
-        ========================= */
+        footer a:hover {
+          color: var(--indigo);
+        }
 
-        @media (max-width: 950px) {
+        @media (max-width: 1100px) {
+          .login-layout {
+            grid-template-columns: minmax(0, 1fr) 430px;
+            gap: 40px;
+          }
 
+          .login-card {
+            padding: 32px 28px;
+          }
+
+          .side-label {
+            display: none;
+          }
+        }
+
+        @media (max-width: 850px) {
           .login-layout {
             grid-template-columns: 1fr;
-
-            max-width: 500px;
-            min-height: calc(100vh - 90px);
+            max-width: 480px;
+            min-height: calc(100vh - 115px);
+            padding: 35px 0 45px;
           }
 
           .intro {
@@ -1025,43 +913,63 @@ export default function LoginPage() {
             width: 100%;
           }
 
-          .side-label {
-            display: none;
-          }
-
           footer {
-            display: none;
+            position: relative;
+            inset: auto;
+            margin: 10px auto 0;
+            max-width: 480px;
           }
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
-
         @media (max-width: 520px) {
-
           .page {
             padding: 20px;
           }
 
+          .brand {
+            font-size: 21px;
+          }
+
+          .brandIcon {
+            width: 37px;
+            height: 37px;
+          }
+
           .topText {
-            display: none;
+            font-size: 11px;
           }
 
           .login-layout {
-            min-height: calc(100vh - 80px);
+            min-height: calc(100vh - 105px);
+            padding: 28px 0;
           }
 
           .login-card {
-            padding: 30px 22px 26px;
-            border-radius: 18px;
+            padding: 28px 21px 24px;
+            border-radius: 19px;
           }
 
           .heading h2 {
             font-size: 27px;
           }
+
+          .online {
+            font-size: 7px;
+          }
+
+          footer {
+            font-size: 9px;
+          }
         }
 
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
       `}</style>
     </>
   );

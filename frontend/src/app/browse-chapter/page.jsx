@@ -1,6 +1,8 @@
+
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import "./BrowseChapter.css";
 
 const chapters = [
@@ -67,6 +69,9 @@ const chapters = [
 ];
 
 export default function BrowseChapter() {
+  // Router: chapter ke lesson page par jaane ke liye
+  const router = useRouter();
+
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -87,7 +92,8 @@ export default function BrowseChapter() {
       chapter.description.toLowerCase().includes(searchText);
 
     const matchesCategory =
-      activeCategory === "All" || chapter.category === activeCategory;
+      activeCategory === "All" ||
+      chapter.category === activeCategory;
 
     return matchesSearch && matchesCategory;
   });
@@ -112,13 +118,16 @@ export default function BrowseChapter() {
             Chapters
           </a>
 
-          <a href="#">Playground</a>
+          <a href="/playground">Playground</a>
         </nav>
 
-        <button className="profile-btn">
-          <span>PS</span>
-          Prince
-          <b>⌄</b>
+        <button
+          type="button"
+          className="profile-btn"
+          onClick={() => router.push("/login")}
+        >
+         
+      
         </button>
       </header>
 
@@ -165,19 +174,14 @@ export default function BrowseChapter() {
           <div className="circle circle-two"></div>
 
           <div className="floating-card">
-            <div className="mini-icon">✦</div>
+            
 
-            <div>
-              <span>YOUR PROGRESS</span>
-              <strong>32%</strong>
-            </div>
+           
 
             <div className="progress-line">
               <div></div>
             </div>
           </div>
-
-          <div className="floating-number">01</div>
         </div>
       </section>
 
@@ -251,7 +255,11 @@ export default function BrowseChapter() {
                 <span>◷ {chapter.duration}</span>
               </div>
 
-              <button type="button" className="start-btn">
+              <button
+                type="button"
+                className="start-btn"
+                onClick={() => router.push(`/chapter/${chapter.id}`)}
+              >
                 <span>Start Chapter</span>
                 <b>→</b>
               </button>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -15,13 +16,13 @@ export default function SignupPage() {
 
         .page {
           min-height: 100vh;
-          background: #eef7ff;
+          background: #f1f3f6;
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 28px;
           font-family: Inter, Arial, sans-serif;
-          color: #172033;
+          color: #202638;
         }
 
         .card {
@@ -30,10 +31,11 @@ export default function SignupPage() {
           min-height: 670px;
           display: grid;
           grid-template-columns: 47% 53%;
-          background: #fff;
+          background: #ffffff;
           border-radius: 28px;
           overflow: hidden;
-          box-shadow: 0 25px 70px rgba(50, 90, 125, 0.14);
+          box-shadow: 0 25px 70px rgba(32, 38, 56, 0.10);
+          border: 1px solid #e4e7ed;
         }
 
         /* LEFT SIDE */
@@ -43,9 +45,9 @@ export default function SignupPage() {
           padding: 42px 48px;
           background: linear-gradient(
             145deg,
-            #e5f4ff,
-            #f5fbff 55%,
-            #eaf5ff
+            #e8ebf2,
+            #f5f6f9 55%,
+            #e9edf5
           );
           display: flex;
           flex-direction: column;
@@ -58,7 +60,7 @@ export default function SignupPage() {
           width: 280px;
           height: 280px;
           border-radius: 50%;
-          background: rgba(99, 181, 239, 0.13);
+          background: rgba(49, 85, 198, 0.09);
           right: -100px;
           top: -100px;
         }
@@ -68,7 +70,7 @@ export default function SignupPage() {
           width: 220px;
           height: 220px;
           border-radius: 50%;
-          background: rgba(145, 211, 255, 0.14);
+          background: rgba(92, 120, 205, 0.08);
           left: -100px;
           bottom: -100px;
         }
@@ -80,7 +82,9 @@ export default function SignupPage() {
           align-items: center;
           gap: 11px;
           font-size: 23px;
-          font-weight: 700;
+          font-weight: 750;
+          letter-spacing: -0.6px;
+          color: #202638;
         }
 
         .brandIcon {
@@ -90,10 +94,10 @@ export default function SignupPage() {
           align-items: center;
           justify-content: center;
           border-radius: 11px;
-          background: white;
-          color: #438dcc;
+          background: #3155c6;
+          color: white;
           font-size: 20px;
-          box-shadow: 0 8px 22px rgba(50, 120, 170, 0.13);
+          box-shadow: 0 8px 22px rgba(49, 85, 198, 0.20);
         }
 
         .content {
@@ -102,9 +106,9 @@ export default function SignupPage() {
         }
 
         .tag {
-          color: #5796c8;
+          color: #3155c6;
           font-size: 10px;
-          font-weight: 700;
+          font-weight: 800;
           letter-spacing: 1.7px;
           margin-bottom: 18px;
           display: block;
@@ -115,17 +119,18 @@ export default function SignupPage() {
           font-size: 42px;
           line-height: 1.12;
           letter-spacing: -1.5px;
-          font-weight: 700;
+          font-weight: 750;
+          color: #202638;
         }
 
         .content h1 span {
-          color: #438dcc;
+          color: #3155c6;
         }
 
         .description {
           max-width: 420px;
           margin: 20px 0 32px;
-          color: #63778b;
+          color: #687286;
           font-size: 14px;
           line-height: 1.7;
         }
@@ -145,26 +150,28 @@ export default function SignupPage() {
         .featureIcon {
           width: 35px;
           height: 35px;
+          flex-shrink: 0;
           border-radius: 10px;
           background: rgba(255, 255, 255, 0.9);
+          border: 1px solid #e1e6f1;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #438dcc;
-          box-shadow: 0 5px 15px rgba(60, 120, 160, 0.08);
+          color: #3155c6;
+          box-shadow: 0 5px 15px rgba(32, 38, 56, 0.04);
         }
 
         .feature strong {
           display: block;
           font-size: 12px;
-          font-weight: 600;
-          margin-bottom: 3px;
-          color: #26384d;
+          font-weight: 700;
+          margin-bottom: 4px;
+          color: #293247;
         }
 
         .feature small {
           font-size: 10px;
-          color: #7d8d9d;
+          color: #7c8597;
         }
 
         .footer {
@@ -172,7 +179,8 @@ export default function SignupPage() {
           z-index: 2;
           display: flex;
           justify-content: space-between;
-          color: #899aaa;
+          gap: 10px;
+          color: #858da0;
           font-size: 10px;
         }
 
@@ -182,8 +190,8 @@ export default function SignupPage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 50px 65px;
-          background: white;
+          padding: 42px 65px;
+          background: #ffffff;
         }
 
         .form {
@@ -202,13 +210,14 @@ export default function SignupPage() {
         .heading h2 {
           margin: 0 0 8px;
           font-size: 29px;
-          font-weight: 700;
-          letter-spacing: -0.6px;
+          font-weight: 750;
+          letter-spacing: -0.8px;
+          color: #202638;
         }
 
         .heading p {
           margin: 0;
-          color: #8290a0;
+          color: #7b8496;
           font-size: 13px;
         }
 
@@ -228,35 +237,36 @@ export default function SignupPage() {
           display: flex;
           flex-direction: column;
           gap: 7px;
+          min-width: 0;
         }
 
         .group label {
-          font-size: 11px;
-          font-weight: 600;
-          color: #48586b;
+          font-size: 12px;
+          font-weight: 650;
+          color: #414b60;
         }
 
         .group input {
           width: 100%;
           height: 45px;
-          border: 1px solid #dce5ed;
+          border: 1px solid #dfe3eb;
           border-radius: 10px;
           outline: none;
           padding: 0 13px;
-          font-size: 12px;
-          color: #26364a;
-          background: #fbfdff;
-          transition: 0.2s;
+          font-size: 13px;
+          color: #202638;
+          background: #f8f9fb;
+          transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
         }
 
         .group input::placeholder {
-          color: #aab5bf;
+          color: #a0a7b5;
         }
 
         .group input:focus {
-          border-color: #72afe0;
-          background: white;
-          box-shadow: 0 0 0 3px rgba(92, 164, 218, 0.1);
+          border-color: #3155c6;
+          background: #ffffff;
+          box-shadow: 0 0 0 3px rgba(49, 85, 198, 0.10);
         }
 
         .password {
@@ -264,7 +274,7 @@ export default function SignupPage() {
         }
 
         .password input {
-          padding-right: 55px;
+          padding-right: 58px;
         }
 
         .show {
@@ -274,57 +284,73 @@ export default function SignupPage() {
           transform: translateY(-50%);
           border: none;
           background: transparent;
-          color: #438dcc;
-          font-size: 10px;
-          font-weight: 600;
+          color: #3155c6;
+          font-size: 11px;
+          font-weight: 700;
           cursor: pointer;
+        }
+
+        .show:hover {
+          color: #243f9b;
         }
 
         .terms {
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          color: #7e8a98;
-          font-size: 10px;
-          line-height: 1.5;
+          color: #727c8f;
+          font-size: 11px;
+          line-height: 1.6;
           margin-top: 1px;
         }
 
         .terms input {
-          margin-top: 2px;
-          accent-color: #4d96d2;
+          margin-top: 3px;
+          accent-color: #3155c6;
+          flex-shrink: 0;
         }
 
         .terms a {
-          color: #438dcc;
+          color: #3155c6;
           text-decoration: none;
+          font-weight: 650;
+        }
+
+        .terms a:hover,
+        .login a:hover {
+          text-decoration: underline;
         }
 
         .button {
-          height: 47px;
+          min-height: 47px;
           border: none;
           border-radius: 11px;
-          background: #4d96d2;
+          background: #3155c6;
           color: white;
-          font-size: 12px;
-          font-weight: 600;
+          font-size: 13px;
+          font-weight: 700;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 12px;
-          box-shadow: 0 9px 22px rgba(67, 145, 207, 0.2);
-          transition: 0.2s;
+          box-shadow: 0 9px 22px rgba(49, 85, 198, 0.20);
+          transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
         }
 
         .button:hover {
-          background: #3988c8;
+          background: #2746aa;
           transform: translateY(-1px);
+          box-shadow: 0 12px 25px rgba(49, 85, 198, 0.25);
+        }
+
+        .button:active {
+          transform: translateY(0);
         }
 
         .arrow {
-          font-size: 16px;
-          transition: 0.2s;
+          font-size: 17px;
+          transition: transform 0.2s;
         }
 
         .button:hover .arrow {
@@ -334,14 +360,14 @@ export default function SignupPage() {
         .login {
           text-align: center;
           margin-top: 23px;
-          color: #8995a2;
-          font-size: 11px;
+          color: #81899a;
+          font-size: 12px;
         }
 
         .login a {
-          color: #438dcc;
+          color: #3155c6;
           text-decoration: none;
-          font-weight: 600;
+          font-weight: 700;
         }
 
         /* RESPONSIVE */
@@ -366,9 +392,9 @@ export default function SignupPage() {
 
           .mobileBrand {
             display: block;
-            color: #438dcc;
-            font-size: 15px;
-            font-weight: 700;
+            color: #3155c6;
+            font-size: 16px;
+            font-weight: 750;
             margin-bottom: 24px;
           }
         }
@@ -376,13 +402,14 @@ export default function SignupPage() {
         @media (max-width: 480px) {
           .page {
             padding: 0;
-            background: white;
+            background: #ffffff;
           }
 
           .card {
             min-height: 100vh;
             border-radius: 0;
             box-shadow: none;
+            border: none;
           }
 
           .right {
@@ -401,7 +428,6 @@ export default function SignupPage() {
 
       <main className="page">
         <div className="card">
-
           {/* LEFT */}
           <section className="left">
             <div className="circle1"></div>
@@ -440,7 +466,7 @@ export default function SignupPage() {
                 <div className="feature">
                   <div className="featureIcon">◈</div>
                   <div>
-                    <strong>Test & refine</strong>
+                    <strong>Test &amp; refine</strong>
                     <small>Experiment and improve your results.</small>
                   </div>
                 </div>
@@ -464,61 +490,68 @@ export default function SignupPage() {
           {/* RIGHT */}
           <section className="right">
             <div className="form">
-
               <div className="heading">
                 <span className="mobileBrand">✦ Promptly</span>
-
                 <h2>Create Your Account</h2>
                 <p>Start building powerful prompts today.</p>
               </div>
 
               <form className="formBody">
-
                 <div className="row">
                   <div className="group">
-                    <label>First name</label>
+                    <label htmlFor="firstName">First name</label>
                     <input
+                      id="firstName"
                       type="text"
+                      name="firstName"
                       placeholder="First name"
+                      autoComplete="given-name"
                       required
                     />
                   </div>
 
                   <div className="group">
-                    <label>Last name</label>
+                    <label htmlFor="lastName">Last name</label>
                     <input
+                      id="lastName"
                       type="text"
+                      name="lastName"
                       placeholder="Last name"
+                      autoComplete="family-name"
                       required
                     />
                   </div>
                 </div>
 
                 <div className="group">
-                  <label>Email address</label>
+                  <label htmlFor="email">Email address</label>
                   <input
+                    id="email"
                     type="email"
-                    placeholder="@example.com"
+                    name="email"
+                    placeholder="you@example.com"
+                    autoComplete="email"
                     required
                   />
                 </div>
 
                 <div className="group">
-                  <label>Password</label>
-
+                  <label htmlFor="password">Password</label>
                   <div className="password">
                     <input
+                      id="password"
                       type={showPassword ? "text" : "password"}
+                      name="password"
                       placeholder="Create a password"
+                      autoComplete="new-password"
                       required
                     />
 
                     <button
                       type="button"
                       className="show"
-                      onClick={() =>
-                        setShowPassword(!showPassword)
-                      }
+                      onClick={() => setShowPassword(!showPassword)}
+                      aria-label={showPassword ? "Hide password" : "Show password"}
                     >
                       {showPassword ? "Hide" : "Show"}
                     </button>
@@ -526,21 +559,22 @@ export default function SignupPage() {
                 </div>
 
                 <div className="group">
-                  <label>Confirm password</label>
-
+                  <label htmlFor="confirmPassword">Confirm password</label>
                   <div className="password">
                     <input
+                      id="confirmPassword"
                       type={showConfirm ? "text" : "password"}
-                      placeholder="Confirm Password"
+                      name="confirmPassword"
+                      placeholder="Confirm your password"
+                      autoComplete="new-password"
                       required
                     />
 
                     <button
                       type="button"
                       className="show"
-                      onClick={() =>
-                        setShowConfirm(!showConfirm)
-                      }
+                      onClick={() => setShowConfirm(!showConfirm)}
+                      aria-label={showConfirm ? "Hide confirm password" : "Show confirm password"}
                     >
                       {showConfirm ? "Hide" : "Show"}
                     </button>
@@ -549,7 +583,6 @@ export default function SignupPage() {
 
                 <label className="terms">
                   <input type="checkbox" required />
-
                   <span>
                     I agree to the{" "}
                     <a href="#">Terms of Service</a>{" "}
@@ -562,17 +595,14 @@ export default function SignupPage() {
                   Create account
                   <span className="arrow">→</span>
                 </button>
-
               </form>
 
               <div className="login">
                 Already have an account?{" "}
                 <a href="/login">Sign in</a>
               </div>
-
             </div>
           </section>
-
         </div>
       </main>
     </>

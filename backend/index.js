@@ -1,24 +1,33 @@
-const express = require('express')
-const UserRouter = require('./routers/userRouter');
-require('./connection');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
+
+const UserRouter = require("./routers/userRouter");
+const GeminiRouter = require("./routers/geminiRouter");
+
+require("./connection");
+
 const app = express();
 const port = 5000;
 
-//middleware
-app.use(cors({
-    origin: 'http://localhost:3000'
-}));
+// Middleware
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
+
 app.use(express.json());
-app.use('/user', UserRouter);
 
+// Routes
+app.use("/user", UserRouter);
+app.use("/gemini", GeminiRouter);
 
-app.get('/', (req, res) => {
-    res.send('response from the server');
+// Home route
+app.get("/", (req, res) => {
+  res.send("response from the server");
 });
 
-//start the server 
+// Start the server
 app.listen(port, () => {
-    console.log('server started');
-
+  console.log(`Server started on port ${port}`);
 });
